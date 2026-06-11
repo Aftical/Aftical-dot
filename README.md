@@ -8,4 +8,5 @@ sudo pacman -S picom i3 kitty fish feh
 ```
 
 ## i3 screenshot
-![i3wm](/screenshot/I3.png)(screenshots/I3.png)
+![i3wm](/screenshot/I3.png)
+![](screenshots/I3.png)
