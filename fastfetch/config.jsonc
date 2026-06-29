@@ -17,38 +17,38 @@
             "type": "custom"
         },
         {
-            "key": "│           │\u001b[11D\u001b[31m user    \u001b[33m│", 
+            "key": "│           │\u001b[11D\u001b[31m user    \u001b[36m│", 
             "type": "title",
             "format": "{1}"
         },
         {
-            "key": "│           │\u001b[11D\u001b[32m󰇅 hname   \u001b[33m│",
+            "key": "│           │\u001b[11D\u001b[32m󰇅 hname   \u001b[36m│",
             "type": "title",
             "format": "{2}"
         },
         {
-            "key": "│           │\u001b[11D\u001b[34m󰟾 distro  \u001b[33m│",
+            "key": "│           │\u001b[11D\u001b[34m󰟾 distro  \u001b[36m│",
             "type": "os"
         },
         {
-            "key": " │           │\u001b[11D\u001b[36m󰇄 window  \u001b[33m│",
+            "key": " │           │\u001b[11D\u001b[36m󰇄 window  \u001b[36m│",
             "type": "wm"
         },
         {
-            "key": "│           │\u001b[11D\u001b[36m󰇄 desktop \u001b[33m│",
+            "key": "│           │\u001b[11D\u001b[36m󰇄 desktop \u001b[36m│",
             "type": "de"
         },
         {
-            "key": "│           │\u001b[11D\u001b[33m󰍛 cpu     \u001b[33m│",
+            "key": "│           │\u001b[11D\u001b[33m󰍛 cpu     \u001b[36m│",
             "type": "cpu"
         },
         {
-            "key": "│           │\u001b[11D\u001b[34m󰉉 disk    \u001b[33m│",
+            "key": "│           │\u001b[11D\u001b[34m󰉉 disk    \u001b[36m│",
             "type": "disk",
             "folders": "/"
         },
         {
-            "key": "│           │\u001b[11D\u001b[35m memory  \u001b[33m│",
+            "key": "│           │\u001b[11D\u001b[35m memory  \u001b[36m│",
             "type": "memory"
         },
         {
@@ -56,7 +56,7 @@
             "type": "custom"
         },
         {
-            "key": "│            \u001b[11D\u001b[m colors  \u001b[33m│",
+            "key": "│            \u001b[11D\u001b[m colors  \u001b[36m│",
             "type": "colors",
             "symbol": "circle"
         },
