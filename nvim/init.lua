@@ -32,12 +32,12 @@ require("lazy").setup({
   {
     "folke/tokyonight.nvim",
     config = function()
-    require("tokyonight").setup({
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
+      require("tokyonight").setup({
+        transparent = true,
+        styles = {
+          sidebars = "transparent",
+          floats = "transparent",
+        },
     })
     end,
   },
@@ -45,12 +45,12 @@ require("lazy").setup({
     "rose-pine/neovim",
     name = "rose-pine",
     config = function()
-    require("rose-pine").setup({
+      require("rose-pine").setup({
         disable_background = true,
         disable_float_background = true,
         disable_italics = false,
     })
-        vim.cmd("colorscheme tokyonight")
+        vim.cmd("colorscheme rose-pine-moon")
     end,
   },
   {
@@ -63,12 +63,12 @@ require("lazy").setup({
     config = function()
       local builtin = require("telescope.builtin")
         vim.keymap.set("n", "<leader>ff", function()
-        require("telescope.builtin").find_files({ cwd = vim.fn.getcwd() })
-      end, { desc = "Find files in current dir" })
+          require("telescope.builtin").find_files({ cwd = vim.fn.getcwd() })
+        end, { desc = "Find files in current dir" })
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
       vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
-      vim.keymap.set("n", "<leader>fe", function()
-      require("telescope").extensions.file_browser.file_browser({
+      vim.keymap.set("n", "<leader>j", function()
+        require("telescope").extensions.file_browser.file_browser({
           path = vim.fn.getcwd(),
           hidden = true,
       })
@@ -81,7 +81,7 @@ require("lazy").setup({
     config = function()
       require("lualine").setup({
         options = {
-          theme = "tokyonight",
+          theme = "rose-pine",
         },
       })
     end,
@@ -91,7 +91,7 @@ require("lazy").setup({
     main = "ibl",
     opts = {},
     config = function()
-      vim.api.nvim_set_hl(0, "IblIndent", { fg = "#FFFFFF" })
+      -- vim.api.nvim_set_hl(0, "IblIndent", { fg = "#FFFFFF" })
       require("ibl").setup({
         indent = { char = "│" },
         scope = { enabled = true },
@@ -120,7 +120,7 @@ require("lazy").setup({
         "              じしf_,)ノ",
         "                        ",
         "       Welcome back, Aftical! ",
-        "bam bam ka bam!! Aris is cheering you!",
+        "bam bam ka bam!! Arisu is cheering you!",
       }
       dashboard.section.buttons.val = {
         dashboard.button("e", "New file", ":ene <BAR> startinsert <CR>"),
@@ -129,7 +129,7 @@ require("lazy").setup({
         dashboard.button("g", "Live grep", ":Telescope live_grep <CR>"),
       }
       dashboard.section.footer.val = {
-        "bam bam ka bam!! Aris is cheering you!",
+        "NO LEWDNESS ALLOWED!!! Death penalty!",
         "",
         "",
         "",
@@ -173,4 +173,4 @@ require("lazy").setup({
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "Explore files" })
 vim.keymap.set("n", "<leader>q", vim.cmd.q, { desc = "Quit" })
 vim.opt.wrap = false
-print("bam bam ka bam!! Aris is cheering you!")
+print("Aris-simp Uhe~")

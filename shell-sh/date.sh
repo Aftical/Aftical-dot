@@ -1,2 +1,2 @@
 #!/bin/bash
-date
+date +%I:%H%p

@@ -1,26 +1,25 @@
 hl.monitor({
 	output = "",
-	mode = "1366x768@60",
+	mode = "highres",
 	position = "auto",
 	scale = "1",
 })
 local terminal = "kitty"
-local fileManager = "dolphin"
--- local menu = "qs -c noctalia-shell ipc call launcher toggle"
--- local setting = "qs -c noctalia-shell ipc call settings toggle"
--- local wallpaper = "qs -c noctalia-shell ipc call wallpaper toggle"
--- local session = "qs -c noctalia-shell ipc call sessionMenu toggle"
--- local media = "qs -c noctalia-shell ipc call media toggle"
--- local controlCenter = "qs -c noctalia-shell ipc call controlCenter toggle"
--- local clipboard = "qs -c noctalia-shell ipc call launcher clipboard"
+local fileManager = "thunar"
+local menu = "qs -c noctalia-shell ipc call launcher toggle"
+local setting = "qs -c noctalia-shell ipc call settings toggle"
+local wallpaper = "qs -c noctalia-shell ipc call wallpaper toggle"
+local session = "qs -c noctalia-shell ipc call sessionMenu toggle"
+local media = "qs -c noctalia-shell ipc call media toggle"
+local controlCenter = "qs -c noctalia-shell ipc call controlCenter toggle"
+local clipboard = "qs -c noctalia-shell ipc call launcher clipboard"
 hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 16")
 	hl.exec_cmd("nm-applet")
-	hl.exec_cmd("kwybars-daemon")
-	hl.exec_cmd("foot --server")
-	hl.exec_cmd("waybar")
+	-- hl.exec_cmd("foot --server")
+	-- hl.exec_cmd("waybar")
 	hl.exec_cmd("~/.config/Aftical-dot/shell-sh/notify.sh")
-	-- hl.exec_cmd("qs -c noctalia-shell")
+	hl.exec_cmd("qs -c noctalia-shell")
 end)
 hl.env("XCURSOR_SIZE", "16")
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
@@ -28,33 +27,33 @@ hl.env("HYPRCURSOR_SIZE", "16")
 hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Classic")
 hl.config({
 	general = {
-		gaps_in = 3,
+		gaps_in = 1,
 		gaps_out = 5,
 		border_size = 2,
 		col = {
 			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
-			inactive_border = "rgba(0, 0, 0, 0)",
+			inactive_border = "rgba(33ccffaa)",
 		},
 		resize_on_border = false,
-		allow_tearing = true,
-		layout = "dwindle",
+		allow_tearing = false,
+		layout = "master",
 	},
 	decoration = {
-		rounding = 0,
+		rounding = 10,
 		rounding_power = 2.4,
 		active_opacity = 0.9,
 		inactive_opacity = 0.9,
 		shadow = {
-			enabled = false,
+			enabled = true,
 			range = 40,
 			render_power = 10,
 			color = "rgba(1a1a1aee)",
-		        scale = 0.99,
+		  scale = 0.98,
 			offset = "0, 2",
 		},
 		blur = {
 			enabled = true,
-			size = 3,
+			size = 2,
 			passes = 3,
 			new_optimizations = true,
 			vibrancy = 1,
@@ -75,22 +74,22 @@ hl.curve("quick", { type = "bezier", points = { { 0.15, 0 }, { 0.1, 1 } } })
 hl.curve("inst", { type = "bezier", points = { { 0, 0 }, { 0, 0 } } })
 hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
 hl.curve("overshoot", { type = "bezier", points = { { 0.13, 0.99 }, { 0.29, 1.1 } } })
-hl.animation({ leaf = "global", enabled = true, speed = 5, bezier = "default" })
-hl.animation({ leaf = "border", enabled = true, speed = 5.39, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windows", enabled = false, speed = 4.79, bezier = "inst" })
-hl.animation({ leaf = "windowsIn", enabled = false, speed = 0.01, bezier = "inst", style = "" })
-hl.animation({ leaf = "windowsOut", enabled = false, speed = 0.01, bezier = "inst", style = "" })
-hl.animation({ leaf = "fadeIn", enabled = true, speed = 0.1, bezier = "inst" })
-hl.animation({ leaf = "fadeOut", enabled = true, speed = 0.1, bezier = "inst" })
+hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
+hl.animation({ leaf = "border", enabled = false, speed = 5.39, bezier = "easeOutQuint" })
+hl.animation({ leaf = "windows", enabled = true, speed = 4, bezier = "quick" })
+hl.animation({ leaf = "windowsIn", enabled = true, speed = 1.5, bezier = "inst", style = "gnomed" })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 1, bezier = "inst", style = "gnomed" })
+hl.animation({ leaf = "fadeIn", enabled = true, speed = 1, bezier = "quick" })
+hl.animation({ leaf = "fadeOut", enabled = true, speed = 1, bezier = "quick" })
 hl.animation({ leaf = "fade", enabled = true, speed = 3.03, bezier = "quick" })
 hl.animation({ leaf = "layers", enabled = true, speed = 3.81, bezier = "easeOutQuint" })
-hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "easeOutQuint", style = "slide" })
-hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear", style = "slide" })
+hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "easeOutQuint", style = "fade" })
+hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear", style = "fade" })
 hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 1.79, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 2, bezier = "slide", style = "slide" })
-hl.animation({ leaf = "workspacesIn", enabled = true, speed = 2, bezier = "slide", style = "slide" })
-hl.animation({ leaf = "workspacesOut", enabled = true, speed = 2, bezier = "slide", style = "slide" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 4, bezier = "slide", style = "slide" })
+hl.animation({ leaf = "workspacesIn", enabled = true, speed = 4, bezier = "slide", style = "slide" })
+hl.animation({ leaf = "workspacesOut", enabled = true, speed = 4, bezier = "slide", style = "slide" })
 hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
 hl.config({
 	dwindle = {
@@ -104,13 +103,13 @@ hl.config({
 	},
 	misc = {
 		force_default_wallpaper = 0,
-		disable_hyprland_logo = false,
+		disable_hyprland_logo = true,
 	},
 	input = {
-		kb_layout = "us, la",
-		kb_variant = ",stea",
+		kb_layout = "us",
+		kb_variant = "",
 		kb_model = "",
-		kb_options = "grp:alt_space_toggle",
+		kb_options = "",
 		kb_rules = "",
 		follow_mouse = 1,
 		sensitivity = 0,
@@ -120,49 +119,41 @@ hl.config({
 		repeat_rate = 50,
 		repeat_delay = 250,
 	},
-        -- plugin = {
-        --         borders_plus_plus = {
-        --         border_size_1 = 1,
-        --                 add_borders = 1,
-        --                 col = {
-        --                       ;  border_1 = "rgba(0, 0, 0, 0.1)"
-        --                 }
-        --         }
-        -- }
 })
 hl.device({
 	name = "epic-mouse-v1",
 	sensitivity = -0.5,
 })
-hl.bind("SUPER + Return", hl.dsp.exec_cmd("~/.config/Aftical-dot/shell-sh/anip.sh"))
+-- hl.bind("SUPER + Return", hl.dsp.exec_cmd("~/.config/Aftical-dot/shell-sh/anip.sh"))
+hl.bind("SUPER + Return", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + T", hl.dsp.exec_cmd("kitty --app-id float"))
-local closeWindowBind = hl.bind("SUPER + Q", hl.dsp.window.close())
+hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("SUPER + CTRL + SHIFT + Q", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager))
- hl.bind("SUPER + SUPER_L ", hl.dsp.exec_cmd("rofi -show drun"))
-hl.bind("SUPER + N", hl.dsp.exec_cmd("footclient nvim"))
+hl.bind("SUPER + N", hl.dsp.exec_cmd("kitty --app-id editor nvim"))
 hl.bind("SUPER + PRINT", hl.dsp.exec_cmd("hyprshot -m output"))
 hl.bind("SUPER + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
-hl.bind("SUPER + SHIFT + C", hl.dsp.exec_cmd("hyprpicker"))
+hl.bind("SUPER + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"))
 hl.bind("SUPER + Z", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + F", hl.dsp.window.fullscreen({ action = "toggle" }))
-hl.bind("SUPER + M", hl.dsp.exec_cmd("kitty ncmpcpp"))
+hl.bind("SUPER + SHIFT + M", hl.dsp.exec_cmd("kitty --app-id music ncmpcpp"))
 hl.bind("SUPER + CTRL + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind("SUPER + CTRL + Escape", hl.dsp.exec_cmd("kitty btop"))
+hl.bind("F12", hl.dsp.exec_cmd("~/.config/Aftical-dot/shell-sh/notify.sh"))
+hl.bind("SUPER + SHIFT + R", hl.dsp.exec_cmd("~/.config/Aftical-dot/shell-sh/way-re.sh"))
+-- hl.bind("SUPER + SUPER_L ", hl.dsp.exec_cmd("rofi -show drun"))
+-- hl.bind("SUPER +  ESCAPE", hl.dsp.exec_cmd("wlogout"))
+hl.bind("SUPER + SUPER_L ", hl.dsp.exec_cmd(menu))
+hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd(wallpaper))
+hl.bind("SUPER + M", hl.dsp.exec_cmd(media))
+hl.bind("SUPER + V", hl.dsp.exec_cmd(clipboard))
+hl.bind("SUPER + Escape", hl.dsp.exec_cmd(session))
+hl.bind("SUPER + SHIFT + comma", hl.dsp.exec_cmd(setting))
+hl.bind("SUPER + comma", hl.dsp.exec_cmd(controlCenter))
 hl.bind("SUPER + h", hl.dsp.focus({ direction = "left" }))
 hl.bind("SUPER + j", hl.dsp.focus({ direction = "down" }))
 hl.bind("SUPER + k", hl.dsp.focus({ direction = "up" }))
 hl.bind("SUPER + l", hl.dsp.focus({ direction = "right" }))
-hl.bind("F12", hl.dsp.exec_cmd("~/.config/Aftical-dot/shell-sh/notify.sh"))
-hl.bind("SUPER + SHIFT + R", hl.dsp.exec_cmd("~/.config/Aftical-dot/shell-sh/way-re.sh"))
-
--- hl.bind("SUPER + SUPER_L ", hl.dsp.exec_cmd(menu))
--- hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd(wallpaper))
--- hl.bind("SUPER + M", hl.dsp.exec_cmd(media))
--- hl.bind("SUPER + V", hl.dsp.exec_cmd(clipboard))
--- hl.bind("SUPER + Escape", hl.dsp.exec_cmd(session))
--- hl.bind("SUPER + SHIFT + comma", hl.dsp.exec_cmd(setting))
--- hl.bind("SUPER + comma", hl.dsp.exec_cmd(controlCenter))
 for i = 1, 10 do
 	local key = i % 10
 	hl.bind("SUPER + " .. key, hl.dsp.focus({ workspace = i }))
@@ -176,26 +167,10 @@ hl.bind("SUPER + SHIFT + L", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind("SUPER + SHIFT + H", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
-hl.bind(
-	"XF86AudioRaiseVolume",
-	hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
-	{ locked = true, repeating = true }
-)
-hl.bind(
-	"XF86AudioLowerVolume",
-	hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
-	{ locked = true, repeating = true }
-)
-hl.bind(
-	"XF86AudioMute",
-	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
-	{ locked = true, repeating = true }
-)
-hl.bind(
-	"XF86AudioMicMute",
-	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
-	{ locked = true, repeating = true }
-)
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true, repeating = true }	)
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true, repeating = true })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
@@ -204,8 +179,8 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tru
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 hl.bind("SUPER + F1", hl.dsp.exec_cmd("brightnessctl set 5%-"), { repeating = true })
 hl.bind("SUPER + F2", hl.dsp.exec_cmd("brightnessctl set +5%"), { repeating = true })
-hl.bind("SUPER + F3", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { repeat_press = true })
-hl.bind("SUPER + F4", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"), { repeat_press = true })
+hl.bind("SUPER + F3", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { repeat_press = false })
+hl.bind("SUPER + F4", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"), { repeat_press = false })
 hl.bind("SUPER + F5", hl.dsp.exec_cmd("playerctl previous"))
 hl.bind("SUPER + F6", hl.dsp.exec_cmd("playerctl play-pause"))
 hl.bind("SUPER + F7", hl.dsp.exec_cmd("playerctl next"))
@@ -214,7 +189,9 @@ hl.bind("SUPER + F6", hl.dsp.exec_cmd("mpc toggle"))
 hl.bind("SUPER + F7", hl.dsp.exec_cmd("mpc next"))
 local suppressMaximizeRule = hl.window_rule({
 	name = "suppress-maximize-events",
-	match = { class = ".*" },
+	match = {
+    class = ".*"
+  },
 	suppress_event = "maximize",
 })
 hl.window_rule({
@@ -286,4 +263,30 @@ hl.window_rule({
 	float = true,
 	center = true,
 	size = "700 350",
+})
+hl.window_rule({
+  name = "blender",
+  match = {
+    class = "blender",
+  },
+  opacity = "2",
+  size = "900 500",
+  center = true,
+  float = true,
+})
+hl.window_rule({
+  name = "ncmpcpp",
+  match = {
+    class = "music",
+  },
+  float = true,
+  size = "900 500",
+})
+hl.window_rule({
+  name = "nvim",
+  match = {
+    class = "editor",
+  },
+  float = true,
+  size = "500 700",
 })

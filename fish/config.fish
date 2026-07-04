@@ -1,4 +1,4 @@
-# starship init fish | source
+starship init fish | source
 fastfetch
 
 abbr -a p sudo pacman -S

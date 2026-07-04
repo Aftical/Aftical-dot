@@ -1,39 +1,31 @@
+@import "/home/Aftical/.cache/wal/colors-waybar.css";
 * {
-    font-family: Iosevka Nerd Font;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 12px;
     margin: 1px;
 }
-
-@import "/home/Aftical/.cache/wal/colors-waybar.css";
-
 window#waybar {
     background-color: rgba(0, 0, 0, 0.8);
-    /* border-bottom: 1px solid @color5; */
     color: @foreground;
     border-bottom: inset 1px @color9;
 }
-
 button {
     border: none;
     border-radius: 0;
 }
-
 #workspaces button {
     padding: 0 5px;
     background-color: @background;
     color: @color2;
 }
-
 #workspaces button.focused,
 #workspaces button.active {
-    border-bottom: inset 1px @color5;
+    border-bottom: inset 1px @color9;
     color: @color5;
 }
-
 #workspaces button.urgent {
     background-color: @foreground;
 }
-
 #clock,
 #battery,
 #backlight,
@@ -45,17 +37,10 @@ button {
     color: @color5;
     background-color: @background;
 }
-
 #window,
 #workspaces {
     margin: 3px;
 }
-
-#battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
-}
-
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
     color: #ffffff;
