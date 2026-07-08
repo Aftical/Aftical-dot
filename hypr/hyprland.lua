@@ -6,20 +6,21 @@ hl.monitor({
 })
 local terminal = "kitty"
 local fileManager = "thunar"
-local menu = "qs -c noctalia-shell ipc call launcher toggle"
-local setting = "qs -c noctalia-shell ipc call settings toggle"
-local wallpaper = "qs -c noctalia-shell ipc call wallpaper toggle"
-local session = "qs -c noctalia-shell ipc call sessionMenu toggle"
-local media = "qs -c noctalia-shell ipc call media toggle"
-local controlCenter = "qs -c noctalia-shell ipc call controlCenter toggle"
-local clipboard = "qs -c noctalia-shell ipc call launcher clipboard"
+-- local menu = "qs -c noctalia-shell ipc call launcher toggle"
+-- local setting = "qs -c noctalia-shell ipc call settings toggle"
+-- local wallpaper = "qs -c noctalia-shell ipc call wallpaper toggle"
+-- local session = "qs -c noctalia-shell ipc call sessionMenu toggle"
+-- local controlCenter = "qs -c noctalia-shell ipc call controlCenter toggle"
+-- local clipboard = "qs -c noctalia-shell ipc call launcher clipboard"
 hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 16")
 	hl.exec_cmd("nm-applet")
+	hl.exec_cmd("kwybars-daemon")
 	-- hl.exec_cmd("foot --server")
-	-- hl.exec_cmd("waybar")
+	hl.exec_cmd("waybar")
+	hl.exec_cmd('mpvpaper -vs -o "no-audio loop" eDP-1 ~/asset/lobby.webm')
 	hl.exec_cmd("~/.config/Aftical-dot/shell-sh/notify.sh")
-	hl.exec_cmd("qs -c noctalia-shell")
+	-- hl.exec_cmd("qs -c noctalia-shell")
 end)
 hl.env("XCURSOR_SIZE", "16")
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
@@ -31,8 +32,10 @@ hl.config({
 		gaps_out = 5,
 		border_size = 2,
 		col = {
-			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
-			inactive_border = "rgba(33ccffaa)",
+			--active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
+			--inactive_border = "rgba(33ccff00)",
+			active_border = { colors = { "#e7ad65", "#7da2be" }, angle = 45 },
+			inactive_border = "rgba(33ccff00)",
 		},
 		resize_on_border = false,
 		allow_tearing = false,
@@ -77,8 +80,8 @@ hl.curve("overshoot", { type = "bezier", points = { { 0.13, 0.99 }, { 0.29, 1.1 
 hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
 hl.animation({ leaf = "border", enabled = false, speed = 5.39, bezier = "easeOutQuint" })
 hl.animation({ leaf = "windows", enabled = true, speed = 4, bezier = "quick" })
-hl.animation({ leaf = "windowsIn", enabled = true, speed = 1.5, bezier = "inst", style = "gnomed" })
-hl.animation({ leaf = "windowsOut", enabled = true, speed = 1, bezier = "inst", style = "gnomed" })
+hl.animation({ leaf = "windowsIn", enabled = true, speed = 3, bezier = "quick", style = "popin" })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "quick", style = "popin" })
 hl.animation({ leaf = "fadeIn", enabled = true, speed = 1, bezier = "quick" })
 hl.animation({ leaf = "fadeOut", enabled = true, speed = 1, bezier = "quick" })
 hl.animation({ leaf = "fade", enabled = true, speed = 3.03, bezier = "quick" })
@@ -130,26 +133,25 @@ hl.bind("SUPER + T", hl.dsp.exec_cmd("kitty --app-id float"))
 hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("SUPER + CTRL + SHIFT + Q", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager))
+hl.bind("SUPER + SHIFT + F", hl.dsp.exec_cmd("kitty --app-id float yazi"))
 hl.bind("SUPER + N", hl.dsp.exec_cmd("kitty --app-id editor nvim"))
 hl.bind("SUPER + PRINT", hl.dsp.exec_cmd("hyprshot -m output"))
 hl.bind("SUPER + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
 hl.bind("SUPER + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"))
 hl.bind("SUPER + Z", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + F", hl.dsp.window.fullscreen({ action = "toggle" }))
-hl.bind("SUPER + SHIFT + M", hl.dsp.exec_cmd("kitty --app-id music ncmpcpp"))
 hl.bind("SUPER + CTRL + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind("SUPER + CTRL + Escape", hl.dsp.exec_cmd("kitty btop"))
 hl.bind("F12", hl.dsp.exec_cmd("~/.config/Aftical-dot/shell-sh/notify.sh"))
 hl.bind("SUPER + SHIFT + R", hl.dsp.exec_cmd("~/.config/Aftical-dot/shell-sh/way-re.sh"))
--- hl.bind("SUPER + SUPER_L ", hl.dsp.exec_cmd("rofi -show drun"))
--- hl.bind("SUPER +  ESCAPE", hl.dsp.exec_cmd("wlogout"))
-hl.bind("SUPER + SUPER_L ", hl.dsp.exec_cmd(menu))
-hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd(wallpaper))
-hl.bind("SUPER + M", hl.dsp.exec_cmd(media))
-hl.bind("SUPER + V", hl.dsp.exec_cmd(clipboard))
-hl.bind("SUPER + Escape", hl.dsp.exec_cmd(session))
-hl.bind("SUPER + SHIFT + comma", hl.dsp.exec_cmd(setting))
-hl.bind("SUPER + comma", hl.dsp.exec_cmd(controlCenter))
+hl.bind("SUPER + SUPER_L ", hl.dsp.exec_cmd("rofi -show drun"))
+hl.bind("SUPER +  ESCAPE", hl.dsp.exec_cmd("wlogout"))
+-- hl.bind("SUPER + SUPER_L ", hl.dsp.exec_cmd(menu))
+-- hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd(wallpaper))
+-- hl.bind("SUPER + V", hl.dsp.exec_cmd(clipboard))
+-- hl.bind("SUPER + Escape", hl.dsp.exec_cmd(session))
+-- hl.bind("SUPER + SHIFT + comma", hl.dsp.exec_cmd(setting))
+-- hl.bind("SUPER + comma", hl.dsp.exec_cmd(controlCenter))
 hl.bind("SUPER + h", hl.dsp.focus({ direction = "left" }))
 hl.bind("SUPER + j", hl.dsp.focus({ direction = "down" }))
 hl.bind("SUPER + k", hl.dsp.focus({ direction = "up" }))
@@ -160,6 +162,7 @@ for i = 1, 10 do
 	hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("magic"))
+hl.bind("SUPER + M", hl.dsp.workspace.toggle_special("magic music kitty ncmpcpp"))
 hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
@@ -275,18 +278,19 @@ hl.window_rule({
   float = true,
 })
 hl.window_rule({
-  name = "ncmpcpp",
-  match = {
-    class = "music",
-  },
-  float = true,
-  size = "900 500",
-})
-hl.window_rule({
   name = "nvim",
   match = {
     class = "editor",
   },
   float = true,
   size = "500 700",
+})
+hl.window_rule({
+  name = "thunar",
+  match = {
+    class = "thunar",
+  },
+  center = true,
+  float = true,
+  size = "500 50",
 })

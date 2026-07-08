@@ -1,12 +1,12 @@
-#;--- kwybars-configurations ---;#
-# theme = "rose-pine"
+#;--- kwybarsConfigurations ---;#
+theme = "rose-pine"
 
 [overlay]
 monitor_mode = "primary"
 layer = "background"
 position = "bottom"
 full_length = false
-width = 400
+width = 300
 height = 100
 anchor_margin = 0
 margin_left = 0
@@ -28,31 +28,31 @@ wave_fill = false
 wave_glow = false
 wave_smoothing = 1.0
 wave_motion_smoothing = 1
-wave_amplitude = 0.8
-frame_edges = ["top", "bottom"]
+wave_amplitude = 1
+frame_edges = ["bottom", "bottom"]
 frame_mirror_mode = "pairs"
 bars = 70
 bar_width = 10
 bar_corner_radius = 50
 segmented_bars = false
-segment_length = 50
-segment_gap = 6
+segment_length = 25
+segment_gap = 5
 radial_inner_radius = 180
 radial_start_angle = -90
 radial_arc_degrees = 360
 radial_rotation_speed = 0
 center_offset_x = 0
 center_offset_y = 0
-polygon_sides = 3
+polygon_sides = 0
 polygon_radius = 220
 polygon_bar_length = 0
-polygon_rotation = -90
+polygon_rotation = 0
 polygon_rotation_speed = 0
 gap = 5
 framerate = 60
 color_mode = "gradient"
 color_rgba = "rgba(175, 198, 255, 0.7)"
-color2_rgba = "rgba(191, 198, 220, 0.7)"
+color2_rgba = "rgba(191, 198, 220, 0.2)"
 theme_opacity = 1.0
 pipewire_attack = 0.14
 pipewire_decay = 0.975
