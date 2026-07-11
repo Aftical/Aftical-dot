@@ -36,6 +36,8 @@ hl.config({
 			--inactive_border = "rgba(33ccff00)",
 			active_border = { colors = { "#e7ad65", "#7da2be" }, angle = 45 },
 			inactive_border = "rgba(33ccff00)",
+			--active_border = { colors = { "#00000000", "#00000000" }, angle = 45 },
+			--inactive_border = "rgba(33ccff00)",
 		},
 		resize_on_border = false,
 		allow_tearing = false,
@@ -47,12 +49,10 @@ hl.config({
 		active_opacity = 0.9,
 		inactive_opacity = 0.9,
 		shadow = {
-			enabled = true,
+			enabled = false,
 			range = 40,
 			render_power = 10,
 			color = "rgba(1a1a1aee)",
-		  scale = 0.98,
-			offset = "0, 2",
 		},
 		blur = {
 			enabled = true,
@@ -62,9 +62,7 @@ hl.config({
 			vibrancy = 1,
 		},
 	},
-	animations = {
-		enabled = true,
-	},
+	animations = { enabled = true },
 })
 hl.curve("easy", { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
 hl.curve("ins", { type = "spring", mass = 1, stiffness = 0.6, dampening = 0.6 })
