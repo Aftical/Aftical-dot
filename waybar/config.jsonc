@@ -2,14 +2,15 @@
   "layer": "top",
   "position": "top",
   "spacing": 5,
+  "margin": 5,
   "modules-left": [
+    "clock",
     "hyprland/workspaces"
   ],
   "modules-center": [
     "mpd"
   ],
   "modules-right": [
-    "clock",
     "pulseaudio",
     "network",
     "battery",
@@ -22,6 +23,9 @@
       "urgent": "󱐌",
       "active" : "󱨇",
       "default":""
+    },
+    "persistent-workspaces": {
+      "*": 3
     }
   },
   "mpd": {
@@ -36,6 +40,7 @@
     "spacing": 10
   },
   "clock": {
+    "format": "{:%I:%M%p}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d}"
   },
@@ -67,7 +72,7 @@
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
-    "format-source": " {volume}% ",
+    "format-source": "{volume}% ",
     "format-source-muted": "",
     "format-icons": {
       "headphone": "",
