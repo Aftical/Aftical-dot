@@ -2,7 +2,7 @@
 
 ## Dependencies require!
 ```
-sudo pacman -S fish kitty brightnessctl waybar rofi hyprlock
+sudo pacman -S fish kitty brightnessctl waybar rofi hyprlock mpc mpd ncmpcpp
 ```
 ## AUR stuff
 ```
