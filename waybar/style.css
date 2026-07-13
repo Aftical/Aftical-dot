@@ -26,14 +26,26 @@ button {
 #workspaces button.active {
   color: #eab56b;
 }
-#workspaces button.urgent {
-  background-color: #df716d;
+#pulseaudio {
+  color: #dc8459;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 0 10 0 10px;
+}
+#network {
+  color: #eeb56d;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 0 10 0 10px;
+}
+#battery {
+  color: #83a3c1;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 0 10 0 10px;
 }
 #clock,
-#battery,
 #backlight,
-#network,
-#pulseaudio,
 #mpd,
 #tray {
   color: #eab56b;

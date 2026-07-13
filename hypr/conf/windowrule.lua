@@ -49,12 +49,12 @@ hl.window_rule({
 	size = "1280 720",
 	opacity = "2",
 })
-hl.layer_rule({
+hl.window_rule({
 	name = "mpv",
 	match = {
-		namespace = "mpv",
+		class = "mpv",
 	},
-	blur = false,
+  opacity = "2",
 })
 hl.window_rule({
 	name = "feh",
@@ -101,4 +101,13 @@ hl.window_rule({
   center = true,
   float = true,
   size = "500 50",
+})
+hl.window_rule({
+  name = "pavu",
+  match = {
+    class = "org.pulseaudio.pavucontrol",
+  },
+  center = true,
+  float = true,
+  size = "700 500",
 })

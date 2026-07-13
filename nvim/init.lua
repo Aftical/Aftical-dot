@@ -49,15 +49,15 @@ require("lazy").setup({
         disable_float_background = true,
         disable_italics = false,
     })
-        vim.cmd("colorscheme rose-pine-moon")
+      vim.cmd("colorscheme rose-pine-moon")
     end,
   },
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.8",
     dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope-file-browser.nvim"
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-file-browser.nvim"
     },
     config = function()
       local builtin = require("telescope.builtin")
@@ -172,4 +172,4 @@ require("lazy").setup({
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "Explore files" })
 vim.keymap.set("n", "<leader>q", vim.cmd.q, { desc = "Quit" })
 vim.opt.wrap = false
-print("Aris-simp Uhe~")
+print("Go with the Light at Your back Hero!")

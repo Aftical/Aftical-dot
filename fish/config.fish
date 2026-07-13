@@ -9,3 +9,4 @@ abbr -a c clear
 abbr -a ff fastfetch
 abbr -a q exit
 abbr -a dot cd ~/.config/Aftical-dot
+abbr -a hl start-hyprland

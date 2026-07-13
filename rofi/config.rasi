@@ -1,4 +1,4 @@
-// Config //
+@theme "~/.config/rofi/themes/theme.rasi"
 configuration {
     modi:                        "drun,filebrowser,window,run";
     show-icons:                  false;
@@ -8,24 +8,20 @@ configuration {
     display-window:              "";
     drun-display-format:         "{name}";
     window-format:               "{w}{t}";
-    font:                        "JetBrainsMono Nerd Font";
+    font:                        "JetBrainsMono Nerd Font Mono";
     icon-theme:                  "Tela-circle-dracula";
 }
-
-@theme "~/.config/rofi/themes/themes/theme.rasi"
-
-// Main //
 window {
-    height:                      500;
-    width:                       600;
-    transparency:                true;
+    height:                      480px;
+    width:                       500px;
+    border-radius:               40px;
+    transparency:                "real";
     fullscreen:                  false;
     enabled:                     true;
     cursor:                      "default";
     spacing:                     0em;
     padding:                     0em;
     border-color:                @main-br;
-    border-radius:               20px;
     background-color:            @main-bg;
 }
 mainbox {
@@ -35,20 +31,14 @@ mainbox {
     orientation:                 vertical;
     children:                    [ "inputbar" , "listbox" ];
     background-color:            transparent;
-    //background-image:            url("~/.config/swww/wall.blur", height);
 }
-
-
-// Inputs //
 inputbar {
     enabled:                     true;
     spacing:                     10px;
     padding:                     1.2em;
     children:                    [ "textbox-prompt-colon", "entry" ];
     background-color:            @main-bg;
-    // background-image:            url("~/.config/swww/wall.rofi", width);
 }
-
 textbox-prompt-colon {
     enabled:                     false;
     expand:                      false;
@@ -56,23 +46,19 @@ textbox-prompt-colon {
     background-color:            inherit;
     text-color:                  inherit;
 }
-
 entry {
     border-radius:               20em;
-    border:                      1px;
-    border-color:                #EAB2C2;
+    border:                      2px;
+    border-color:                #e0726b;
     enabled:                     true;
     spacing:                     0em;
     padding:                     0.8em;
-    text-color:                  #83A3BB;
-    //61382D
+    text-color:                  #87a5c1;
     background-color:            transparent;
-    placeholder:                 "looking for something...?";
-    placeholder-color:           #83A3BB;
+    placeholder:                 " 󱨇  looking for something...?";
+    placeholder-color:           #ebb66d;
     cursor:                      text;
 }
-
-// Lists //
 listbox {
     padding:                     1.15em;
     spacing:                     0em;
@@ -97,9 +83,6 @@ listview {
     background-color:            transparent;
     text-color:                  @main-fg;
 }
-
-
-// Modes //
 mode-switcher {
     orientation:                 vertical;
     width:                       1em;
@@ -120,7 +103,6 @@ button selected {
     background-color:            @main-fg;
     text-color:                  @main-bg;
 }
-// Elements //
 element {
     enabled:                     true;
     spacing:                     0em;
@@ -135,9 +117,9 @@ element {
     }
 }
 element selected.normal {
-    background-color:            rgba(0, 0, 0, 0.3);
-    text-color:                  #ffffff;
-    border-radius:		           20em;
+    background-color:            rgba(0, 0, 0, 0.2);
+    text-color:                  #dd855a;
+    border-radius:	          	 20em;
 }
 element-icon {
     size:                        2.1em;
@@ -151,6 +133,5 @@ element-text {
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
-    padding: 	         	         0.7em;
+    padding: 	                	 0.7em;
 }
-

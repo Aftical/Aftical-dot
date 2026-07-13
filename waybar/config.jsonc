@@ -17,10 +17,9 @@
     "tray"
   ],
   "hyprland/workspaces": {
-    "disable-scroll": true,
+    "disable-scroll": false,
     "format": "{icon}",
     "format-icons": {
-      "urgent": "󱐌",
       "active" : "󱨇",
       "default":""
     },
@@ -33,16 +32,17 @@
     "format-disconnected": " ",
     "format-stopped": "{title}",
     "unknown-tag": "?",
-    "interval": 5
+    "interval": 1
   },
   "tray": {
-    "icon-size": 20,
-    "spacing": 10
+    "icon-size": 15,
+    "spacing": 5
   },
   "clock": {
-    "format": "{:%I:%M%p}",
+    "format": "{:%I:%M:%S %p}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}"
+    "format-alt": "{:%Y-%m-%d}",
+    "interval": 1
   },
   "battery": {
     "states": {
@@ -55,16 +55,12 @@
     "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
     "format-alt": "{time} {icon}",
-    "format-good": "",
-    "format-full": ":)",
     "format-icons": ["", "", "", "", ""]
   },
   "network": {
     "format-wifi": "{essid} ({signalStrength}%) ",
     "format-ethernet": "Online",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": ":/"
+    "format-disconnected": "no wifi?"
   },
   "pulseaudio": {
     "scroll-step": 5,

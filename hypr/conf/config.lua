@@ -11,8 +11,8 @@ hl.config({
 			--active_border = { colors = { "#00000000", "#00000000" }, angle = 45 },
 			--inactive_border = "rgba(33ccff00)",
 		},
-		resize_on_border = false,
-		allow_tearing = false,
+		resize_on_border = true,
+		allow_tearing = true,
 		layout = "master",
 	},
 	decoration = {
@@ -35,15 +35,9 @@ hl.config({
 		},
 	},
 	animations = { enabled = true },
-	dwindle = {
-		preserve_split = true,
-	},
-	master = {
-		new_status = "master",
-	},
-	scrolling = {
-		fullscreen_on_one_column = true,
-	},
+	dwindle = { preserve_split = true },
+	master = { new_status = "master" },
+	scrolling = { fullscreen_on_one_column = true },
 	misc = {
 		force_default_wallpaper = 0,
 		disable_hyprland_logo = true,
