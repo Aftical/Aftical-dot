@@ -1,6 +1,6 @@
 # Cleaning?... hmm... I'll do it later.....
 
-## Dependencies require!
+## Dependencies required!
 ```
 sudo pacman -S fish kitty brightnessctl waybar rofi hyprlock mpc mpd ncmpcpp
 ```
