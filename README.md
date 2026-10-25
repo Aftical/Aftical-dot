@@ -2,11 +2,7 @@
 
 ## Dependencies required!
 ```
-sudo pacman -S fish kitty brightnessctl waybar rofi hyprlock mpc mpd ncmpcpp
-```
-## AUR stuff
-```
-yay -S mpvpaper kwybars
+sudo pacman -S fish kitty brightnessctl waybar rofi hyprlock mpc mpd ncmpcpp && yay -S mpvpaper kwybars
 ```
 ## screenshot
 ![](screenshots/screenshot-1.png)
